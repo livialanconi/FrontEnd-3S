@@ -1,0 +1,105 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "contatos": [
+    {
+      "id": "1",
+      "nome": "Livia",
+      "sobrenome": "Lançoni"
+    },
+    {
+      "id": "2",
+      "nome": "Luis",
+      "sobrenome": "Oliva"
+    },
+    {
+      "id": "qgo5Du0MLp0"
+    },
+    {
+      "id": "DsSww7STNE0",
+      "nome": "Livia",
+      "sobrenome": "Lançoni"
+    },
+    {
+      "id": "1Hk9HGJ9CgU"
+    },
+    {
+      "nome": "Livia",
+      "sobrenome": "Caires",
+      "id": "9QR1RUXTpyc"
+    },
+    {
+      "nome": "Livia",
+      "sobrenome": "Caires",
+      "id": "j_SNn7JIqOQ"
+    },
+    {
+      "nome": "Livia",
+      "sobrenome": "Caires",
+      "id": "wI0diN5XLAg"
+    },
+    {
+      "nome": "Luis",
+      "sobrenome": "Oliva",
+      "id": "504D-AIHZSk"
+    },
+    {
+      "nome": "Luis",
+      "sobrenome": "Oliva",
+      "id": "LOCR-QBw4yE"
+    },
+    {
+      "nome": "Luis",
+      "sobrenome": "Oliva",
+      "id": "m2b5d3CJfVk"
+    },
+    {
+      "nome": "Mauro",
+      "sobrenome": "Neto",
+      "id": "be0VkW5F4m8"
+    },
+    {
+      "nome": "Mauro",
+      "sobrenome": "Neto",
+      "email": "lanconineto@yahoo.com.br",
+      "pais": "+5511972910167",
+      "ddd": "11",
+      "telefone": "9999999999",
+      "cep": "Rua Rinc",
+      "rua": "Rua Rincão 166",
+      "numero": "Rua Rincão 166",
+      "apto": "Rua Rincão 166",
+      "bairro": "Jardim Alvorada",
+      "cidade": "Santo André",
+      "estado": "SP",
+      "anotações": "dsf awt r",
+      "id": "4cGkWrE7wfQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
