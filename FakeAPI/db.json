@@ -42,5 +42,23 @@
     }
   ],
   "jogos": [],
+  "imc": [
+    {
+      "nome": "Livia",
+      "altura": 1.67,
+      "peso": 85,
+      "IMC": 30.477966223242138,
+      "situacao": "Obesidade Grau I",
+      "id": "oVvYF7kaUcU"
+    },
+    {
+      "nome": "amy lee",
+      "altura": 1.62,
+      "peso": 50,
+      "IMC": 19.05197378448407,
+      "situacao": "Saudável",
+      "id": "XVggG9Y6LVE"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

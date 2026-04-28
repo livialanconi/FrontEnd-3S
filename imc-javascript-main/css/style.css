@@ -87,6 +87,11 @@ table th, table td {
     border: 1px solid grey;
 }
 
+table td:first-of-type {
+    text-align: left;
+    text-transform: capitalize;
+}
+
 table th { font-weight: bold !important; }
 
 table thead tr {
