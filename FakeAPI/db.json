@@ -60,5 +60,21 @@
       "id": "XVggG9Y6LVE"
     }
   ],
+  "calculadora": [
+    {
+      "n1": 1,
+      "n2": 2,
+      "op": "soma",
+      "resultado": "3.00",
+      "id": "rpYARhiNGS8"
+    },
+    {
+      "n1": 5,
+      "n2": 2,
+      "op": "subtracao",
+      "resultado": "3.00",
+      "id": "awrre2lDg_Y"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
