@@ -5,7 +5,7 @@ import Title from './components/paragrafo/title/title';
 function App() {
   return (
     <div>
-      <Title texto="Bem vindo, sou Título"/>
+      <Title nome="Lívia" sobrenome = "Lançoni" texto = "Bem vindo, sou o título"/>
       <Title texto="Eu sou outro Título"/>
     <Paragrafo textoParagrafo  = "Lorem Ipsum..."/>
     
@@ -13,4 +13,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

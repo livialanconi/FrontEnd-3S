@@ -1,0 +1,8 @@
+.container
+{
+    margin: 0 auto;
+    background-color: red;
+    border: darkblue solid 1px;
+    padding: 20px;
+    border: 5px;
+}
