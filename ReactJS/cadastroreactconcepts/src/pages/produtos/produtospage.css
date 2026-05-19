@@ -1,0 +1,159 @@
+.produtos-page{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d9cbfe;
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-pagina{
+    color: white;
+    margin-bottom: 30px;
+}
+
+.form-produto{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    margin-bottom: 40px;
+}
+
+.input-produto{
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.btn-cadastrar{
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(130, 66, 208);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lista-produtos{
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    gap: 25px;
+}
+
+.card-produto{
+    width: 250px;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    padding-bottom: 20px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.foto-produto{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.titulo-produto{
+    margin-top: 15px;
+    font-size: 22px;
+}
+
+.preco-produto{
+    color: green;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.descricao-produto{
+    padding: 10px;
+    color: #555;
+}
+
+.btn-apagar{
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+body{
+    display: block;
+    background-color: #ebe5fa;
+}
+h1{
+    font-size: 45px;
+    gap: 10px;
+}
+
+.cadastro-caixa{
+    border: none;
+
+    width: 500px;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+nav{
+    
+    background-color: #d9cbfe;
+}
+
+.link{
+    color: white;
+}
+
+a{
+    color: rgb(255, 255, 255);
+}
+
+.botao-excluir-editar{
+    color: violet;
+}
+
+.btn-cancelar {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(130, 66, 208);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.apagar-editar-button{
+    color: black;
+}

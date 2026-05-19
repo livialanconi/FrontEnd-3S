@@ -1,13 +1,6 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "titulo": "Máscara De Cílios SEPHORA COLLECTION Size Up",
-      "preco": 119,
-      "descricao": "A máscara de cílios SEPHORA COLLECTION Size Up entrega um volume intenso de +180%(1), alongando e curvando os cílios para um efeito XXL impactante. Sua fórmula vegana(2) de longa duração mantém os cílios volumosos o dia todo, sem borrar.",
-      "imagem": "hero.png"
-    },
-    {
       "id": "2",
       "titulo": "Produto xpto",
       "preco": 55.08,
@@ -22,32 +15,32 @@
       "imagem": "hero.png"
     },
     {
-      "titulo": "teste 3",
-      "descricao": "teste3",
-      "preco": 40,
-      "imagem": "hero.png",
-      "id": "VJQRfLLUy5k"
-    },
-    {
-      "titulo": "testeee",
-      "descricao": "testeee",
-      "preco": 20,
-      "imagem": "hero.png",
-      "id": "Qil0dM86u3I"
-    },
-    {
-      "titulo": "testeee",
-      "descricao": "testeee",
-      "preco": 90,
-      "imagem": "hero.png",
-      "id": "F_mUmqFtRJM"
-    },
-    {
-      "titulo": "teste5",
+      "titulo": "teste",
       "descricao": "teste",
-      "preco": 90,
+      "preco": 0,
       "imagem": "hero.png",
-      "id": "60ELbwWg8z8"
+      "id": "WFjfGCK3d0o"
+    },
+    {
+      "titulo": "testeh9",
+      "descricao": "ghj",
+      "preco": 0,
+      "imagem": "hero.png",
+      "id": "jUIuhHw934Q"
+    },
+    {
+      "titulo": "teste",
+      "descricao": "2",
+      "preco": "89",
+      "imagem": "hero.png",
+      "id": "FUI-MSXPQ2w"
+    },
+    {
+      "titulo": "teste",
+      "descricao": "fv ds",
+      "preco": "90",
+      "imagem": "hero.png",
+      "id": "hlZry0BfAWU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
