@@ -1,8 +1,14 @@
+import Footer from "../../components/footer/Footer"
+import Header from "../../components/header/Header"
 import "./login.css"
 
 export const Login = () => {
     return (
+        <>
+        <Header />
         <h1>Página de login</h1>
+        <Footer />
+        </>
     )
 }
 
