@@ -16,11 +16,11 @@ export const Alerta = ({
         title: title,
         text: text,
         icon: icon,
-        showCancelButton: showCancelButton != null ? showCancelButton : undefined,
-        confirmButtonText: confirmButtonText != null ? confirmButtonText : undefined,
-        cancelButtonText: cancelButtonText != null ? cancelButtonText : undefined,
-        confirmButtonColor,
-        cancelButtonColor
+        showCancelButton: showCancelButton,
+        confirmButtonText: confirmButtonText,
+        cancelButtonText: cancelButtonText,
+        confirmButtonColor: confirmButtonColor,
+        cancelButtonColor : cancelButtonColor,
     })
 }
 // const result = await Swal.fire({

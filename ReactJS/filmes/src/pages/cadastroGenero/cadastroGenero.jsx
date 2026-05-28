@@ -15,10 +15,7 @@ const CadastroGenero = () => {
     const [editar, setEditar] = useState(false)
 
 
-    const [listaGeneros, setListaGeneros] = useState([
-        { idGenero: 1, nome: "Romance" },
-        { idGenero: 1, nome: "Comédia" }
-    ])
+    const [listaGeneros, setListaGeneros] = useState()
 
     const cadastrarGenero = async (e) => {
         e.preventDefault()
@@ -37,6 +34,7 @@ const CadastroGenero = () => {
         const objCadastro = {
             nome: valor
         }
+        
         try {
             const retornoAPI = await api.post("/Genero", objCadastro)
 
