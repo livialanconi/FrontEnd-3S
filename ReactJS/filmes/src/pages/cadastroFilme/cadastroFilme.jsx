@@ -3,20 +3,29 @@ import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 import Cadastro from "../../components/cadastro/Cadastro"
 import { useEffect, useState } from "react"
-import api from "../../services/services"
+import api from "../../Services/services"
 import Lista from "../../components/lista/Lista"
 //bibliotrcas de alertas
 import Swal from "sweetalert2"
-import { Alerta } from "../../components/alerta/alerta"
+import { Alerta } from "../../components/alerta/Alerta"
+
+
+
 
 
 const CadastroFilme = () => {
 
     const [valor, setValor] = useState("")
     const [idEditar, setIdEditar] = useState(0)
-    const [idGenero, setIdGenero] = useState(0)
     const [editar, setEditar] = useState(false);
-    const [listaGeneros, setListaGeneros] = useState([]);
+    const [genero, setGenero] = useState("")
+    const [imagem, setImagem] = useState()
+
+    const [listaGeneros, setListaGeneros] = useState([
+        { idGenro: 1, nome: "Ação" },
+        { idGenro: 2, nome: "Comédia" },
+        { idGenro: 3, nome: "Terror" },
+    ])
 
     const [listaFilmes, setListaFilmes] = useState([])
 
@@ -36,26 +45,26 @@ const CadastroFilme = () => {
             return false
         }
 
-        const formData = new FormData();
+        console.log("Genero selecionado: " + genero)
+        console.log("Genero selecionado: " + valor)
 
-        formData.append('nome', valor);
-        formData.append('idGenero', idGenero);
-
+        const formData = new FormData()
+        formData.append("Nome", valor)
+        formData.append("idGenero", genero)
+        formData.append("Imagem", imagem)
 
         try {
             const retornoAPI = await api.post("/Filme", formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    "Content-Type": "multipart/form-data"
                 }
-            })
-
-            console.log(retornoAPI)
-
+            }
+            )
             if (retornoAPI.status == 201) {
 
                 Alerta({
                     title: "Cadastro De Filme",
-                    text: `Filme (${valor}) cadastrado com sucesso`,
+                    text: `Filme(${formData.get("Nome")}) cadastrado com sucesso`,
                     icon: "success",
                     confirmButtonText: "OK"
                 });
@@ -71,13 +80,11 @@ const CadastroFilme = () => {
                 })
                 // alert("Houve algum problema ao cadastrar!")
             }
-
-
         } catch (error) {
             Alerta(
                 {
                     title: "Cadastro De Filme",
-                    text: `Erro na chamada da API (catch) ${error}`,
+                    text: `Erro na chamada da API`,
                     icon: "error",
                     confirmButtonText: "OK"
                 })
@@ -93,10 +100,15 @@ const CadastroFilme = () => {
     }
 
     const preEditar = (item) => {
+        const formData = new FormData()
+        formData.append("Nome", valor)
+        formData.append("idGenero", genero)
+        formData.append("Imagem", null)
 
         setIdEditar(item.idFilme)
         setValor(item.nome)
         setEditar(true)
+        console.log(item)
     }
     const editarFilme = async (e) => {
         e.preventDefault()
@@ -104,8 +116,16 @@ const CadastroFilme = () => {
         const objEditar = {
             nome: valor
         }
+
         try {
-            const retornoAPI = await api.put(`/Filme/${idEditar}`, objEditar)
+            const formData = new FormData()
+
+            formData.append("Nome", valor)
+            formData.append("idGenero", genero)
+            formData.append("Imagem", imagem)
+            const retornoAPI = await api.put(`/Filme/${idEditar}`, formData)
+
+            console.log(retornoAPI)
             if (retornoAPI.status == 204) {
 
                 Alerta({
@@ -161,11 +181,18 @@ const CadastroFilme = () => {
         //     return false
         //    }    
         try {
-            const retornoAPI = await api.delete(`/Filme/${item.idFilme}`)
+            const formData = new FormData()
+
+            formData.append("Nome", valor)
+            formData.append("idGenero", genero)
+            formData.append("Imagem", null)
+            
+            const retornoAPI = await api.delete(`/Filme/${item.idFilme}`, formData)
             if (retornoAPI.status == 204 || retornoAPI.status == 200) {
 
                 limparFormulario();
                 getFilmes()
+                console.log(retornoAPI)
             }
         } catch (error) { }
     }
@@ -180,11 +207,15 @@ const CadastroFilme = () => {
 
         try {
             const retornoAPI = await api.get("/Filme")
-            const dados = await retornoAPI.data
-            const filmesOrdenados = dados.sort((a, b) =>
-                a.titulo.localeCompare(b.nome)
-            )
-            setListaFilmes(filmesOrdenados)
+            const dados = retornoAPI.data
+            console.log(dados)
+            setListaFilmes(dados)
+
+            //  const filmesOrdenados = dados.sort((a, b) =>
+            //     a.titulo.localeCompare(b.titulo)
+            // )
+            // setListaFilmes(filmesOrdenados)
+            // console.log(filmesOrdenados)
         } catch (error) {
             alert("Erro ao buscar filmes: " + error)
         }
@@ -192,24 +223,23 @@ const CadastroFilme = () => {
     }
 
     const getGeneros = async () => {
+
         try {
             const retornoAPI = await api.get("/Genero")
             const dados = retornoAPI.data
-            setListaGeneros(dados)
-
+            const generosOrdenados = dados.sort((a, b) =>
+                a.nome.localeCompare(b.nome)
+            )
+            setListaGeneros(generosOrdenados)
         } catch (error) {
-            Swal.fire({
-                title: "Cadastro de Gênero",
-                text: "Erro ao retornar os dados",
-                icon: "error",
-                confirmButtonText: "Ok",
-            })
-            // alert("Erro ao retornar os dados")
+            alert("Erro ao buscar gêneros: " + error)
         }
+
     }
+
     return (
-        <>
-            <Header />
+
+        <><Header />
 
             <main>
                 <Cadastro
@@ -223,7 +253,8 @@ const CadastroFilme = () => {
                     funcCadastro={editar ? editarFilme : cadastrarFilme}
                     btnEditar={editar}
                     listaGeneros={listaGeneros}
-                    setIdGenero={setIdGenero}
+                    setGenero={setGenero}
+                    setImagem={setImagem}
 
                 />
 
@@ -238,11 +269,9 @@ const CadastroFilme = () => {
                     funcExcluir={excluirFilme}
                     funcEditar={preEditar}
 
-
                 />
             </main>
-            <Footer />
-        </>
+            <Footer /></>
 
     )
 

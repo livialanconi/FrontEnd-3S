@@ -3,9 +3,9 @@ import "./Lista.css";
 // Importação de imagens:
 import Editar from "../../assets/img/pen-to-square-solid.svg";
 import Excluir from "../../assets/img/trash-can-regular.svg";
+import faltadecartaz from "../../assets/img/imagem preta.webp"
 
 const Lista = (props) => {
-    
     return (
         <section className="layout_grid">
             <div className="listagem">
@@ -19,6 +19,7 @@ const Lista = (props) => {
                             {/* tr => table row */}
                             <tr className="table_cabecalho">
                                 {/* th => table head */}
+                                <th style={{ display: props.visibilidade }}>Imagem</th>
                                 <th>Nome</th>
                                 <th style={{ display: props.visibilidade }}>Gênero</th>
                                 <th>Editar</th>
@@ -31,9 +32,15 @@ const Lista = (props) => {
                             {props.lista && props.lista.length > 0 ? (
                                 // Se houver itens, faz um map (laço) para renderizar cada item da lista
                                 props.lista.map((item) => (
-                                    <tr className="item_lista" key={props.tipoLista == "genero" ? item.idGenero : item.idFilme}>
+                                    <tr className="item_lista" key={props.tipoLista === "filme" ? item.idFilme : item.idGenero}>
                                         {/* {console.log(index)} */}
                                         {/* {console.log(item.idGenero)} */}
+                                        <td data-cell="Imagem" style={{ display: props.visibilidade }}>
+                                            {/* Primeira célula da linha: mostra o nome (se for gênero) ou título (se for filme) */}
+                                            {/* titulo == filme */}
+                                            {/* {props.tipoLista === "genero" ? item.nome : item.titulo} */}
+                                            <img className="img_cartaz" src={(`https://localhost:7030/imagens/${item.imagem}` == `https://localhost:7030/imagens/` || `https://localhost:7030/imagens/${item.imagem}` == `https://localhost:7030/imagens/null` || `https://localhost:7030/imagens/${item.imagem}` == `https://localhost:7030/imagens/undefined`) ? faltadecartaz : `https://localhost:7030/imagens/${item.imagem}` } alt="" />
+                                        </td>
                                         <td data-cell="Nome">
                                             {/* Primeira célula da linha: mostra o nome (se for gênero) ou título (se for filme) */}
                                             {/* titulo == filme */}

@@ -1,5 +1,5 @@
-import "./Header.css";
-import Logo from "../../assets/img/logo.svg"
+import "./header.css";
+import Logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -12,8 +12,8 @@ const Header = () => {
                 </Link>
 
                 <nav className="nav_header">
-                    <Link className="link_header" to="/filmes">Filme</Link>
-                    <Link className="link_header" to="/generos">Gênero</Link>
+                    <Link className="link_header" to="/Filmes">Filme</Link>
+                    <Link className="link_header" to="/Generos">Gênero</Link>
                 </nav>
             </div>
         </header>

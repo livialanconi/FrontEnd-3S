@@ -1,0 +1,21 @@
+{
+  "Genero": [
+    {
+      "nome": "Romance",
+      "id": "uccjT5X-MsE"
+    },
+    {
+      "nome": "Comédia",
+      "id": "3QfH56Bpdfg"
+    },
+    {
+      "nome": "Terror",
+      "id": "TB-tefmQ0ao"
+    },
+    {
+      "nome": "Desenho",
+      "id": "iqIT6C9d9Sk"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
