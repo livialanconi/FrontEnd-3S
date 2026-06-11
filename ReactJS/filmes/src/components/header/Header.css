@@ -41,3 +41,19 @@ header{
         margin-left: 10px;
     }
 }
+.btn_logout{
+     width: 80px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #73061B;
+    color: white;
+    border-radius: 6px;
+    /* Negrito */
+    font-weight: bolder;
+    margin-left: 20px;
+}
+
+.btn_logout:hover{
+    background-color: #520515;
+}

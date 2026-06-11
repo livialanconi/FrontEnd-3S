@@ -1,8 +1,24 @@
 import "./header.css";
 import Logo from "../../assets/img/logo.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UsuarioContext } from "../context/UsuarioContext";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+    const { setUsuario } = useContext(UsuarioContext);
+    const navigate = useNavigate();
+
+    const realizarLogout = () => {
+        localStorage.setItem("usuario", null);
+
+        setUsuario(null);
+
+        navigate("/");
+    };
+
+
     return (
         <header>
             <div className="layout_grid cabecalho">
@@ -14,8 +30,15 @@ const Header = () => {
                 <nav className="nav_header">
                     <Link className="link_header" to="/Filmes">Filme</Link>
                     <Link className="link_header" to="/Generos">Gênero</Link>
+               
+                <button className="btn_logout"
+                onClick ={() => realizarLogout()}>
+                Sair
+                </button>
+                
                 </nav>
             </div>
+            
         </header>
     )
 }
