@@ -3,15 +3,11 @@ import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 import Cadastro from "../../components/cadastro/Cadastro"
 import {useEffect, useState} from "react"
-import api from "../../Services/services"
+import api from "../../services/api"
 import Lista from "../../components/lista/Lista"
 //bibliotrcas de alertas
 import Swal from "sweetalert2"
 import { Alerta } from "../../components/alerta/Alerta"
-
-
-
-
 
 const CadastroGenero = () => {
 
